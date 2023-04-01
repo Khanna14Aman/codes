@@ -1,0 +1,268 @@
+#include <sstream>
+#include<bits/stdc++.h>
+#include <ctime>
+#include<ext/pb_ds/assoc_container.hpp>
+#include<ext/pb_ds/tree_policy.hpp>
+using namespace std;
+using namespace __gnu_pbds;
+
+typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update>pbds;  // *variable.find_by_order(value) => will give value at that index
+typedef tree<int,null_type,greater<int>,rb_tree_tag,tree_order_statistics_node_update>pbdsgreater; // variable.order_of_key(value) => total no of element less than value
+typedef tree<int,null_type,less_equal<int>,rb_tree_tag,tree_order_statistics_node_update>pbdsmultiset;  // *variable.lower_bound(value) , *variable.upper_bound(value)
+
+#define fio ios_base::sync_with_stdio(false);cin.tie(NULL);
+
+#define int long long
+#define db long double
+
+#define minpqint priority_queue<int, vi, greater<int>>
+#define minpqpi priority_queue<pi,vpi,greater<pi>>
+#define maxpqint priority_queue<int>
+#define maxpqpi priority_queue<pi> 
+
+#ifndef ONLINE_JUDGE
+#define debug(x) cerr<<#x<<" ";_print(x); cerr<<endl;
+#else
+#define debug(x)
+#endif
+
+void _print(int a){cerr<<a;}
+void _print(char a){cerr<<a;}
+void _print(string a){cerr<<a;}
+void _print(bool a){cerr<<a;}
+template <class T, class V> void _print(pair <T, V> p) {cerr << "{"; _print(p.first); cerr << ","; _print(p.second); cerr << "}";}
+template<class T> void _print(vector<T> v){cerr<<"[";for(T i:v){_print(i);cerr<<" ";}cerr<<"]";}
+template<class T> void _print(set<T> s){cerr<<"[";for(T i:s){_print(i);cerr<<" ";}cerr<<"]";}
+template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";}
+
+int dx4[] = {-1,0,1,0};
+int dy4[] = {0,1,0,-1};
+// int dx4[] = {0, 1, 0, -1};// acc to question west->south->east->north 
+// int dy4[] = {-1, 0, 1, 0};// acc to question west->south->east->north
+// int change[] = {2,3,0,1};// acc to question west->south->east->north
+int dx8[] = {-1,-1,0,1,1,1,0,-1};
+int dy8[] = {0,1,1,1,0,-1,-1,-1};
+string dir = "URDL";
+
+const int mod = 1e9+7;;
+const int modl = 1e18;
+const int inf = 1e9+7;
+const int infn = -1e9+7;
+
+int mod_add(int a, int b, int m) {a = a % m; b = b % m; return (((a + b) % m) + m) % m;}
+int mod_mul(int a, int b, int m) {a = a % m; b = b % m; return (((a * b) % m) + m) % m;}
+int mod_sub(int a, int b, int m) {a = a % m; b = b % m; return (((a - b) % m) + m) % m;}
+int gcd(int a, int b) { if (b == 0) return a; return gcd(b, a % b);}
+int power(int base,int n,int mod) {int ans =  1; while(n>0){if(n%2==0){n/=2;base = mod_mul(base,base,mod);}else{ans = mod_mul(ans,base,mod); n--;}} return ans;}
+
+signed main()
+{
+  fio;
+  #ifndef ONLINE_JUDGE
+    freopen("Error.txt","w",stderr);
+    freopen("output.txt", "w", stdout);
+    freopen("input.txt", "r", stdin);  
+  #endif
+    // try to use map,set instead of unordered_map,set in cf....
+    srand(time(NULL));
+    int n;
+    cin>>n;
+    vector<int>ans(n+1,0);
+    vector<int>count(n+1,0);
+    vector<int>pick(n+1,1);
+    map<int,set<int>>mpp;
+    for(int i=0;i<n-2;i++){
+      int a,b,c;
+      cin>>a>>b>>c;
+      count[a]++;
+      count[b]++;
+      count[c]++;
+      mpp[a].insert(b);
+      mpp[a].insert(c);
+      mpp[b].insert(a);
+      mpp[b].insert(c);
+      mpp[c].insert(a);
+      mpp[c].insert(b);
+    }
+    debug(count)
+    int first=-1,second=-1;
+    for(int i=1;i<=n;i++){
+      if(count[i]==1){
+        if(first==-1){
+          first = i;
+        }
+        else{
+          second = i;
+        }
+      }
+    }
+    ans[1] = first;
+    ans[n] = second;
+    for(auto it:mpp[first]){
+      if(count[it]==2){
+        first = it;
+      }
+      if(count[it]==3){
+        second = it;
+      }
+    }
+    ans[2] = first;
+    ans[3] = second;
+    pick[first] = -1;
+    pick[second] = -1;
+    pick[ans[1]] = -1;
+    pick[ans[n]] = -1;
+    for(int i=4;i<n;i++){
+      for(auto it:mpp[ans[i-2]]){
+        if(mpp[ans[i-1]].count(it) && pick[it]!=-1){
+          ans[i] = it;
+          pick[it] = -1;
+          break;
+        }
+      }
+    }
+    for(int i=1;i<=n;i++){
+      cout<<ans[i]<<" ";
+    }
+    cout<<endl;
+  return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <sstream>
+#include<bits/stdc++.h>
+#include <ctime>
+#include<ext/pb_ds/assoc_container.hpp>
+#include<ext/pb_ds/tree_policy.hpp>
+using namespace std;
+using namespace __gnu_pbds;
+
+typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update>pbds;  // *variable.find_by_order(value) => will give value at that index
+typedef tree<int,null_type,greater<int>,rb_tree_tag,tree_order_statistics_node_update>pbdsgreater; // variable.order_of_key(value) => total no of element less than value
+typedef tree<int,null_type,less_equal<int>,rb_tree_tag,tree_order_statistics_node_update>pbdsmultiset;  // *variable.lower_bound(value) , *variable.upper_bound(value)
+
+#define fio ios_base::sync_with_stdio(false);cin.tie(NULL);
+
+#define int long long
+#define db long double
+
+#define minpqint priority_queue<int, vi, greater<int>>
+#define minpqpi priority_queue<pi,vpi,greater<pi>>
+#define maxpqint priority_queue<int>
+#define maxpqpi priority_queue<pi> 
+
+#ifndef ONLINE_JUDGE
+#define debug(x) cerr<<#x<<" ";_print(x); cerr<<endl;
+#else
+#define debug(x)
+#endif
+
+void _print(int a){cerr<<a;}
+void _print(char a){cerr<<a;}
+void _print(string a){cerr<<a;}
+void _print(bool a){cerr<<a;}
+template <class T, class V> void _print(pair <T, V> p) {cerr << "{"; _print(p.first); cerr << ","; _print(p.second); cerr << "}";}
+template<class T> void _print(vector<T> v){cerr<<"[";for(T i:v){_print(i);cerr<<" ";}cerr<<"]";}
+template<class T> void _print(set<T> s){cerr<<"[";for(T i:s){_print(i);cerr<<" ";}cerr<<"]";}
+template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";}
+
+int dx4[] = {-1,0,1,0};
+int dy4[] = {0,1,0,-1};
+// int dx4[] = {0, 1, 0, -1};// acc to question west->south->east->north 
+// int dy4[] = {-1, 0, 1, 0};// acc to question west->south->east->north
+// int change[] = {2,3,0,1};// acc to question west->south->east->north
+int dx8[] = {-1,-1,0,1,1,1,0,-1};
+int dy8[] = {0,1,1,1,0,-1,-1,-1};
+string dir = "URDL";
+
+const int mod = 1e9+7;;
+const int modl = 1e18;
+const int inf = 1e9+7;
+const int infn = -1e9+7;
+
+int mod_add(int a, int b, int m) {a = a % m; b = b % m; return (((a + b) % m) + m) % m;}
+int mod_mul(int a, int b, int m) {a = a % m; b = b % m; return (((a * b) % m) + m) % m;}
+int mod_sub(int a, int b, int m) {a = a % m; b = b % m; return (((a - b) % m) + m) % m;}
+int gcd(int a, int b) { if (b == 0) return a; return gcd(b, a % b);}
+int power(int base,int n,int mod) {int ans =  1; while(n>0){if(n%2==0){n/=2;base = mod_mul(base,base,mod);}else{ans = mod_mul(ans,base,mod); n--;}} return ans;}
+
+signed main()
+{
+  fio;
+  #ifndef ONLINE_JUDGE
+    freopen("Error.txt","w",stderr);
+    freopen("output.txt", "w", stdout);
+    freopen("input.txt", "r", stdin);  
+  #endif
+    // try to use map,set instead of unordered_map,set in cf....
+    srand(time(NULL));
+    int t;
+    cin>>t;
+    while(t--){
+      int n;
+      cin>>n;
+      vector<int>a(n);
+      for(int i=0;i<n;i++){
+        cin>>a[i];
+      }
+      for(int i=0;i<n-1;i++){
+        if(a[i]==0 && a[i+1]==0)continue;
+        if(a[i]==0 && a[i+1]<0){
+          a[i+1]=abs(a[i+1]);
+          continue;
+        }
+        if(a[i]<0 && a[i+1]==0){
+          a[i] = abs(a[i]);
+          continue;
+        }
+        if(a[i]==0 && a[i+1]>0){
+          continue;
+        }
+        if(a[i]>0 && a[i+1]==0)continue;
+
+
+        if(a[i]>0 && a[i+1]>0){
+          continue;
+        }
+
+
+        if(a[i]<0 && a[i+1]<0){
+          a[i] = abs(a[i]);
+          a[i+1] = abs(a[i+1]);
+          continue;
+        }
+
+
+        if(a[i]<0 && a[i+1]>0){
+          if(abs(a[i])>abs(a[i+1])){
+            a[i] =  abs(a[i]);
+            a[i+1] = -a[i+1];
+          }
+          continue;
+        }
+
+        if(a[i]>0 && a[i+1]<0){
+          
+        }
+      }
+    }
+  return 0;
+}
