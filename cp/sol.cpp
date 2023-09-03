@@ -15,6 +15,7 @@ typedef tree<int,null_type,less_equal<int>,rb_tree_tag,tree_order_statistics_nod
 #define int long long
 #define db long double
 
+
 #define minpqint priority_queue<int, vector<int>, greater<int>>
 #define minpqpi priority_queue<pi,vpi,greater<pi>>
 #define maxpqint priority_queue<int>
@@ -55,6 +56,15 @@ int mod_sub(int a, int b, int m) {a = a % m; b = b % m; return (((a - b) % m) + 
 int gcd(int a, int b) { if (b == 0) return a; return gcd(b, a % b);}
 int power(int base,int n,int mod) {int ans =  1; while(n>0){if(n%2==0){n/=2;base = mod_mul(base,base,mod);}else{ans = mod_mul(ans,base,mod); n--;}} return ans;}
 
+bool sortbysecdesc(const pair<int,int> &a,const pair<int,int> &b)
+{
+  if(a.first!=b.first){
+    return a.first>b.first;
+  }
+    return a.second<b.second;
+}
+
+
 signed main()
 {
   fio;
@@ -65,18 +75,37 @@ signed main()
   #endif
     // try to use map,set instead of unordered_map,set in cf....
     srand(time(NULL));
-  int t;
-  cin>>t;
-  while(t--){
-    int n;
-    cin>>n;
-    string st;
-    cin>>st;
-    int res = n-1;
-    for(int i=1;i<n-1;i++){
-      if(st[i+1]==st[i-1])res-=1;
+    int t;
+    cin>>t;
+    while(t--){
+      int n,k;
+      cin>>n>>k;
+      vector<int>v(n);
+      int ans = 0;
+      for(int i=0;i<n;i++){
+        cin>>v[i];
+        ans = max(ans,v[i]);
+      }
+      for(int i=n-2;i>=0;i--){
+        if(v[i]<=v[i+1]){
+          int temp = k;
+          int curr = i;
+          int next = v[i+1];
+          while(curr>=0 && temp){
+            if(v[curr]+temp>=(next+1)){
+              int gap = next+1 - v[curr];
+              temp-=gap;
+              ans = max(ans,next+1);
+              next = next+1;
+              curr--;
+            }
+            else{
+              break;
+            }
+          }
+        }
+      }
+      cout<<ans<<endl;
     }
-    cout<<res<<endl;
-  }
-  return 0;
+    return 0;
 }
