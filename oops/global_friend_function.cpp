@@ -96,7 +96,7 @@ public:
         x = a;
         y = b;
     }
-    friend void add(A &a,B &b);
+    friend void add(A,B);
 };
 class B{
     int x;
@@ -106,10 +106,10 @@ public:
         x = a;
         y = b;
     }
-    friend void add(A &a,B &b);
+    friend void add(A,B);
 };
 
-void add(A &a,B &b){
+void add(A a,B b){
     cout<<"Total x = :"<<a.x+b.x<<endl;
     cout<<"Total Y = :"<<a.y+b.y<<endl;
 }
@@ -117,11 +117,11 @@ void add(A &a,B &b){
 signed main()
 {
   fio;
-  #ifndef ONLINE_JUDGE
-    freopen("Error.txt","w",stderr);
-    freopen("output.txt", "w", stdout);
-    freopen("input.txt", "r", stdin);  
-  #endif
+  // #ifndef ONLINE_JUDGE
+  //   freopen("Error.txt","w",stderr);
+  //   freopen("output.txt", "w", stdout);
+  //   freopen("input.txt", "r", stdin);  
+  // #endif
     // try to use map,set instead of unordered_map,set in cf....
     srand(time(NULL));
     base obj;

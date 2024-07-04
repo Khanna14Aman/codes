@@ -20,7 +20,7 @@ public class Main {
         // Derive obj1 = new Base();
         obj.on();
         obj.greet();
-        // obj.greeting(); not allowed 
+        // obj.greeting();// not allowed 
 
         
     }    

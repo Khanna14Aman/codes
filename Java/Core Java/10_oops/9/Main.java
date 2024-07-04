@@ -13,6 +13,7 @@ class Derive implements Example{
 }
 public class Main {
     public static void main(String[] args) {
+        // Example objj = new Example();//Because Example is an interface; so cannot create object for example interface;
         Derive obj = new Derive();
         obj.decrement(2);
         System.out.println(obj.speed);

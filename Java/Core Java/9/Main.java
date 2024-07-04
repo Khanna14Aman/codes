@@ -76,6 +76,6 @@ public class Main {
 
         // System.out.println(fact(0));
 
-        System.out.println(fibo(1));
+        System.out.println(fibo(3));
     }
 }

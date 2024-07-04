@@ -6,7 +6,7 @@ public class Main{
         int first = 2;
         int second = 3;
         int third = 4;
-        System.out.print("Sum of all number is : ");
+        System.out.print("Sum of all number is : "+3);
         System.out.print(first+second+third);
     }
 }

@@ -65,6 +65,19 @@ bool sortbysecdesc(const pair<int,int> &a,const pair<int,int> &b)
 }
 
 
+// For LeetCode
+// static bool sortbysecdesc(const pair<int,int> &a,const pair<int,int> &b)
+// {
+//   if(a.first!=b.first){
+//     return a.first>b.first;
+//   }
+//     return a.second<b.second;
+// }
+
+// bool cmp(pair<int,int>&a,pair<int,int>&b){
+//   return a.first+a.second>b.first+b.second;
+// }
+
 signed main()
 {
   fio;
@@ -75,37 +88,5 @@ signed main()
   #endif
     // try to use map,set instead of unordered_map,set in cf....
     srand(time(NULL));
-    int t;
-    cin>>t;
-    while(t--){
-      int n,k;
-      cin>>n>>k;
-      vector<int>v(n);
-      int ans = 0;
-      for(int i=0;i<n;i++){
-        cin>>v[i];
-        ans = max(ans,v[i]);
-      }
-      for(int i=n-2;i>=0;i--){
-        if(v[i]<=v[i+1]){
-          int temp = k;
-          int curr = i;
-          int next = v[i+1];
-          while(curr>=0 && temp){
-            if(v[curr]+temp>=(next+1)){
-              int gap = next+1 - v[curr];
-              temp-=gap;
-              ans = max(ans,next+1);
-              next = next+1;
-              curr--;
-            }
-            else{
-              break;
-            }
-          }
-        }
-      }
-      cout<<ans<<endl;
-    }
     return 0;
 }

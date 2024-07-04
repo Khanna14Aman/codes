@@ -1,7 +1,7 @@
 class Base1 extends Thread{
     public void run(){
         int i=0;
-        while(i<20000){
+        while(i<200){
             System.out.println("Thread 1");
             i++;
         }
@@ -10,7 +10,7 @@ class Base1 extends Thread{
 class Base2 extends Thread{
     public void run(){
         int i=0;;
-        while(i<20000){
+        while(i<200){
             System.out.println("Thread 2");
             i++;
         }

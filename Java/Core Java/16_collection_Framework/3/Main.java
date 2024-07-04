@@ -13,5 +13,9 @@ public class Main{
         q.poll();
         System.out.println(q);
         System.out.println(q.peek());
+        System.out.println(q.size());
+        System.out.println(q.isEmpty());
+        q.clear();;
+        System.out.println(q);
     }
 }

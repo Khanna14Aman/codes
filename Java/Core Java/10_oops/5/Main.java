@@ -30,7 +30,8 @@ class Base{
 }
 class Derive extends Base{
     public Derive(){
-        // super(2); if you use this super keyword then you can call the constructor of base calss with arguments
+        // Above in base class parameterized constructor is define so jvm will need manually define default constructor in base class.
+        // super(2); //if you use this super keyword then you can call the constructor of base calss with arguments
         System.out.println("This is derive class constructor");
     }
 }

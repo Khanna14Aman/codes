@@ -13,6 +13,8 @@ class Derive2 extends Derive{
 }
 public class Main{
     public static void main(String[] args) {
+        Derive obj1 = new Derive();
+        // Base o = new Base();// because base class is abstract class;
         Derive2 obj = new Derive2();
         obj.fun();
     }

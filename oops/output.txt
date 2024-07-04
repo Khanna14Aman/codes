@@ -1,1 +1,7 @@
-fun() called
+print base class
+show base class
+print derived class
+show derived class
+print derived class
+print base class
+show base class

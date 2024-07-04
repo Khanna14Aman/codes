@@ -26,14 +26,14 @@ public class Main {
         // PS-2
 
         // float a = 7/4*9/2;
-        // System.out.println(a); this will result in 4.0
+        // System.out.println(a); //this will result in 4.0
 
         // int value = 10;
         // int user = sc.nextInt();
         // boolean is = user>value;
         // System.out.println("This entered value is greater than 10 is "+ is);
 
-        // char grade = 'B';
+        // char grade = 'Z';
         // grade = (char)(grade+8);
         // System.out.println(grade);
         // grade = (char)(grade-8);
@@ -42,7 +42,7 @@ public class Main {
         // int a = 7*49/7+35/7;
         // System.out.println(a);
 
-        sc.close();
+        // sc.close();
     }
 }
 

@@ -1,7 +1,7 @@
 class Base1 implements Runnable{
     public void run(){
         int i=0;
-        while(i++<20000){
+        while(i++<200){
             System.out.println("1");
             
         }
@@ -10,7 +10,7 @@ class Base1 implements Runnable{
 class Base2 implements Runnable{
     public void run(){
         int i=0;;
-        while(i++<20000){
+        while(i++<200){
             System.out.println("2");
         }
     }

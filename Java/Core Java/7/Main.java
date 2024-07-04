@@ -23,7 +23,7 @@ public class Main{
             else if(user==0 && value==2){
                 userWin++;
             }
-            else if(user==1 && value==1){
+            else if(user==1 && value==0){
                 userWin++;
             }
             else if(user==1 && value==2){

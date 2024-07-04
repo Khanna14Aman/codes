@@ -10,11 +10,15 @@ public class Main {
         st.push(a);
         System.out.println(st);
         System.out.println(st.peek());
+        System.out.println(st.size());
         st.pop();
+        System.out.println(st.size());
         System.out.println(st.peek());
         System.out.println(st);
         st.clear();
         System.out.println(st);
+        System.out.println(st.size());
+        System.out.println(st.isEmpty());
     
 
     }    

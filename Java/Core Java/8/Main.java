@@ -49,10 +49,10 @@ public class Main {
         //         System.out.println();
         //     }
         // }
-        // System.out.println(Integer.MIN_VALUE);
-        // System.out.println(Integer.MAX_VALUE);
-        // System.out.println(Integer.min(12,23));
-        // System.out.println(Integer.max(23, 2323));
+        System.out.println(Integer.MIN_VALUE);
+        System.out.println(Integer.MAX_VALUE);
+        System.out.println(Integer.min(12,23));
+        System.out.println(Integer.max(23, 2323));
         System.out.println(Math.min(12, 32232));
         System.out.println(Math.max(2423, 2342342));
         System.out.println(Math.abs(23-23234));
