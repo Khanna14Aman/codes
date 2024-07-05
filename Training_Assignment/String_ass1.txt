@@ -1,0 +1,25 @@
+class Tester{
+    
+    public static String moveSpecialCharacters(String str){
+		//Implement your code here and change the return value accordingly
+          String temp = "";
+          String ans = "";
+          int i=0;
+          while(i<str.length()){
+               if(Character.isLetterOrDigit(str.charAt(i))){
+                    ans+=str.charAt(i);
+               }
+               else{
+                    temp+=str.charAt(i);
+               }
+               i++;
+          }
+        return ans+temp;
+	}
+	
+	public static void main(String args[]){
+	    String str = "He@#$llo!*&";
+	    System.out.println(moveSpecialCharacters(str));
+	}
+	
+}

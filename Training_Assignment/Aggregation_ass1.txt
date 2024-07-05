@@ -1,0 +1,174 @@
+class Address {
+	private String doorNo;
+	private String street;
+	private String city;
+	private int zipcode;
+	
+	public Address(String doorNo, String street, String city, int zipcode) {
+		this.doorNo = doorNo;
+		this.street = street;
+		this.city = city;
+		this.zipcode = zipcode;
+	}
+
+	public String getDoorNo() {
+		return doorNo;
+	}
+
+	public void setDoorNo(String doorNo) {
+		this.doorNo = doorNo;
+	}
+
+	public String getStreet() {
+		return street;
+	}
+
+	public void setStreet(String street) {
+		this.street = street;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public int getZipcode() {
+		return zipcode;
+	}
+
+	public void setZipcode(int zipcode) {
+		this.zipcode = zipcode;
+	}
+}
+
+
+class Customer {
+	private String customerId;
+	private String customerName;
+	private long contactNumber;
+	private Address address;
+	public Customer() {
+		
+	}
+	public Customer(String customerId, String customerName, long contactNumber, Address address) {
+		this.customerId = customerId;
+		this.customerName = customerName;
+		this.contactNumber = contactNumber;
+		this.address = address;
+	}
+	public Customer(String customerName, long contactNumber, Address address) {
+		this.customerName = customerName;
+		this.contactNumber = contactNumber;
+		this.address = address;
+	}
+	public String getCustomerId() {
+		return customerId;
+	}
+	public void setCustomerId(String customerId) {
+		this.customerId = customerId;
+	}
+	public String getCustomerName() {
+		return customerName;
+	}
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+	public long getContactNumber() {
+		return contactNumber;
+	}
+	public void setContactNumber(long contactNumber) {
+		this.contactNumber = contactNumber;
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	public void displayCustomerDetails() {
+		System.out.println("Customer name is : "+this.customerName);
+		System.out.println("Customer contact is : "+this.contactNumber);
+		System.out.println("Customer address is : "+this.address.getDoorNo()+this.address.getStreet()+this.address.getCity()+this.address.getZipcode());
+	}
+	public double payBill(double totalPrice) {
+		return totalPrice;
+	}
+	
+}
+
+
+
+
+class Order{
+	private static int orderIdCounter;
+	private int orderId;
+	private Customer customer;
+	private Food[] orderedFoods;
+	private double totalPrice;
+	private String status;
+	
+	public Order() {
+	}
+	
+	public Order(Food[] orderedFoods,Customer customer) {
+		this.orderedFoods = orderedFoods;
+		this.customer = customer;
+	}
+
+	public static int getOrderIdCounter() {
+		return orderIdCounter;
+	}
+
+	public static void setOrderIdCounter(int orderIdCounter) {
+		Order.orderIdCounter = orderIdCounter;
+	}
+
+	public int getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
+	
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	public Food[] getOrderedFoods() {
+		return orderedFoods;
+	}
+
+	public void setOrderedFoods(Food[] orderedFoods) {
+		this.orderedFoods = orderedFoods;
+	}
+
+	public double getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(double totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	
+	public double calculateTotalPrice(String paymentMode) {
+		return 0.0;
+	}
+
+}

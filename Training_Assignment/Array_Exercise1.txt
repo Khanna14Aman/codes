@@ -1,0 +1,17 @@
+class Tester {
+    
+    public static int calculateSumOfEvenNumbers(int[] numbers){
+        int ans = 0;
+        for(int val:numbers){
+            if(val%2==0){
+                ans+=val;
+            }
+        }
+        return ans;
+    }
+    
+	public static void main(String[] args) {
+		int[] numbers = {68,79,86,99,23,2,41,100};
+		System.out.println("Sum of even numbers: " +calculateSumOfEvenNumbers(numbers));
+	}
+}

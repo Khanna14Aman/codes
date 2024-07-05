@@ -1,0 +1,31 @@
+class Tester{
+    public static String removeDuplicatesandSpaces(String str){
+        //Implement your code here and change the return value accordingly
+        String ans = "";
+        int arr1[] = new int[26];
+        int arr2[] = new int[26];
+        for(int i=0;i<str.length();i++){
+          if(Character.isWhitespace(str.charAt(i))){
+               continue;
+          }
+          else if(Character.isUpperCase(str.charAt(i))){
+               if(arr2[str.charAt(i)-'A']==0){
+                    ans+=str.charAt(i);
+                    arr2[str.charAt(i)-'A']++;
+               }
+          }
+          else{
+               if(arr1[str.charAt(i)-'a']==0){
+                    ans+=str.charAt(i);
+                    arr1[str.charAt(i)-'a']++;
+               }
+          }
+        }
+        return ans;
+	}
+	
+	public static void main(String args[]){
+	    String str = "object oriented programming";
+	    System.out.println(removeDuplicatesandSpaces(str));
+	}
+}

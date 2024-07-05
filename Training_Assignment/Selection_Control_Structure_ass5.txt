@@ -1,0 +1,95 @@
+class Tester {
+	public static void main(String[] args) {
+		String accountNumber = "1";
+		double accountBalance = 23424;
+		int salary = 2342;
+		String loanType = "Car";
+		int expectedAmount = 1233;
+		int expectedEmiCount = 3;
+		if(accountNumber.length()!=4){
+		    System.out.print("Account Number should be of length 4");
+		    return;
+		}
+		if(accountNumber.charAt(0)!='1'){
+		    System.out.print("First digit of account Number should be 1");
+		    return;
+		}
+		for(int i=0;i<4;i++){
+		    if(!Character.isDigit(accountNumber.charAt(i))){
+		        System.out.print("Only digits are allowed for account Number");
+		        return;
+		    }
+		}
+		if(accountBalance<1000){
+		    System.out.print("Minimum balance required is 1000");
+		    return;
+		}
+		if(loanType.equals("Car")){
+		    if(salary>25000){
+		        if(expectedAmount<=500000){
+		            if(expectedEmiCount<=36){
+		                System.out.println("Account Number : "+accountNumber);
+		                System.out.println("Loan Eligible : "+500000);
+		                System.out.println("Loan Expected : "+expectedAmount);
+		                System.out.println("Total Emi count : "+36);
+		            }
+		            else{
+		                System.out.print("This EMI is not possible");
+		            }
+		        }
+		        else{
+		            System.out.print("This amount of loan is not possible");
+		        }
+		    }
+		    else{
+		        System.out.print("Your salary is below our criteria");
+		    }
+		}
+		else if(loanType.equals("House")){
+		    if(salary>75000){
+		        if(expectedAmount<=7500000){
+		            if(expectedEmiCount<=84){
+		                System.out.println("Account Number : "+accountNumber);
+		                System.out.println("Loan Eligible : "+7500000);
+		                System.out.println("Loan Expected : "+expectedAmount);
+		                System.out.println("Total Emi count : "+84);
+		            }
+		            else{
+		                System.out.print("This EMI is not possible");
+		            }
+		        }
+		        else{
+		            System.out.print("This amount of loan is not possible");
+		        }
+		    }
+		    else{
+		        System.out.print("Your salary is below our criteria");
+		    }
+		}
+		else if(loanType.equals("Business")){
+		    if(salary>25000){
+		        if(expectedAmount<=500000){
+		            if(expectedEmiCount<=36){
+		                System.out.println("Account Number : "+accountNumber);
+		                System.out.println("Loan Eligible : "+500000);
+		                System.out.println("Loan Expected : "+expectedAmount);
+		                System.out.println("Total Emi count : "+36);
+		            }
+		            else{
+		                System.out.print("This EMI is not possible");
+		            }
+		        }
+		        else{
+		            System.out.print("This amount of loan is not possible");
+		        }
+		    }
+		    else{
+		        System.out.print("Your salary is below our criteria");
+		    }
+		}
+		else{
+		    System.out.print("This type of loan is not allowed");
+		}
+	}
+}
+

@@ -1,0 +1,100 @@
+class Address {
+	private String doorNo;
+	private String street;
+	private String city;
+	private int zipcode;
+	
+	public Address(String doorNo, String street, String city, int zipcode) {
+		this.doorNo = doorNo;
+		this.street = street;
+		this.city = city;
+		this.zipcode = zipcode;
+	}
+
+	public String getDoorNo() {
+		return doorNo;
+	}
+
+	public void setDoorNo(String doorNo) {
+		this.doorNo = doorNo;
+	}
+
+	public String getStreet() {
+		return street;
+	}
+
+	public void setStreet(String street) {
+		this.street = street;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public int getZipcode() {
+		return zipcode;
+	}
+
+	public void setZipcode(int zipcode) {
+		this.zipcode = zipcode;
+	}
+}
+
+
+public class Customer {
+	private String customerId;
+	private String customerName;
+	private long contactNumber;
+	private Address address;
+	public Customer() {
+		
+	}
+	public Customer(String customerId, String customerName, long contactNumber, Address address) {
+		this.customerId = customerId;
+		this.customerName = customerName;
+		this.contactNumber = contactNumber;
+		this.address = address;
+	}
+	public Customer(String customerName, long contactNumber, Address address) {
+		this.customerName = customerName;
+		this.contactNumber = contactNumber;
+		this.address = address;
+	}
+	public String getCustomerId() {
+		return customerId;
+	}
+	public void setCustomerId(String customerId) {
+		this.customerId = customerId;
+	}
+	public String getCustomerName() {
+		return customerName;
+	}
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+	public long getContactNumber() {
+		return contactNumber;
+	}
+	public void setContactNumber(long contactNumber) {
+		this.contactNumber = contactNumber;
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	public void displayCustomerDetails() {
+		System.out.println("Customer name is : "+this.customerName);
+		System.out.println("Customer contact is : "+this.contactNumber);
+		System.out.println("Customer address is : "+this.address.getDoorNo()+this.address.getStreet()+this.address.getCity()+this.address.getZipcode());
+	}
+	public double payBill(double totalPrice) {
+		return totalPrice;
+	}
+	
+}

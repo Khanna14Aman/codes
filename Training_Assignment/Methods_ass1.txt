@@ -1,0 +1,29 @@
+import java.util.Random;
+
+class Order{
+	private int orderId;
+	private String orderedFood;
+	private String status;
+	private int foodPrice;
+	public double calculateTotalPrice(String foodName,int unitPrice){
+		Random r = new Random();
+		this.orderId = r.nextInt(100);
+		this.orderedFood = foodName;
+		this.status = "Ordered";
+		this.foodPrice = ((unitPrice/100)*5)+unitPrice;
+		return this.foodPrice;
+	}
+	public void displayDetails(){
+		System.out.println("OrderId : "+this.orderId);
+		System.out.println("OrderedFood : "+this.orderedFood);
+		System.out.println("Status : "+this.status);
+		System.out.println("Total price : "+this.foodPrice);
+	}
+}
+class Tester{
+	public static void main(String args[]) { 
+	    Order obj = new Order();
+		obj.calculateTotalPrice("chowmin", 100);
+		obj.displayDetails();
+    } 
+}

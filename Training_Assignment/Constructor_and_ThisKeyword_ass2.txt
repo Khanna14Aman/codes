@@ -1,0 +1,24 @@
+class Restaurant{
+	private String restaurantName;
+	private long restaurantContact;
+	private String restaurantAddress;
+	private float rating;
+	Restaurant(String restaurantName,long restaurantContact,String restaurantAddress,float rating){
+		this.restaurantName = restaurantName;
+		this.restaurantAddress = restaurantAddress;
+		this.restaurantContact = restaurantContact;
+		this.rating = rating;
+	}
+	public void displayDetails(){
+		System.out.println("Restaurant Name : "+this.restaurantName);
+		System.out.println("Restaurant Contact : "+this.restaurantContact);
+		System.out.println("Restaurant Address : "+this.restaurantAddress);
+		System.out.println("Rating is : "+this.rating);
+	}
+}
+class Tester{
+	public static void main(String args[]) { 
+	    Restaurant obj = new Restaurant("Taj",3223232323l,"mumbai",2342.3f);
+		obj.displayDetails();
+    } 
+}

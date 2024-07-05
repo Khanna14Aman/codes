@@ -1,0 +1,27 @@
+class Tester {
+	public static void main(String[] args) {
+		int quantityOneDollar = 23,quantityFiveDollar = 3,purchaseAmount = 23;
+		int needFive = purchaseAmount / 5;
+		if(needFive<=quantityFiveDollar){
+		    purchaseAmount -= needFive*5;
+		    if(purchaseAmount>quantityOneDollar){
+		        System.out.print(-1);
+		    }
+		    else{
+		        System.out.println("$1 notes needed = "+purchaseAmount);
+		        System.out.print("$5 notes needed = "+needFive);
+		    }
+		}
+		else{
+		    purchaseAmount -= quantityFiveDollar*5;
+		    if(purchaseAmount>quantityOneDollar){
+		        System.out.print(-1);
+		    }
+		    else{
+		        System.out.println("$1 notes needed = "+purchaseAmount);
+		        System.out.print("$5 notes needed = "+quantityFiveDollar);
+		    }
+		}
+	}
+}
+

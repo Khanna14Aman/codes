@@ -1,0 +1,30 @@
+import java.util.Random;
+
+class Order{
+	private int orderId;
+	private String orderedFood;
+	private String status;
+	private int foodPrice;
+	Order(){
+		this.status = "Ordered";
+	}
+	Order(int orderId,String orderedFood){
+		this.orderId = orderId;
+		this.orderedFood = orderedFood;
+		this.status = "Ordered";
+	}
+	public void displayDetails(){
+		System.out.println("OrderId : "+this.orderId);
+		System.out.println("OrderedFood : "+this.orderedFood);
+		System.out.println("Status : "+this.status);
+		System.out.println("Total price : "+this.foodPrice);
+	}
+}
+class Tester{
+	public static void main(String args[]) { 
+	    Order obj1 = new Order();
+		obj1.displayDetails();
+		Order obj2 = new Order(1,"Chowmin");
+		obj2.displayDetails();
+    } 
+}

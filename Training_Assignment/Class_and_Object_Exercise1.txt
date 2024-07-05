@@ -1,0 +1,15 @@
+class Food {
+    public String foodName;
+	public String foodType;
+	public String cuisine;
+	public int quantityAvailable;
+	public double unitPrice;
+}
+
+class Tester {
+
+	public static void main(String args[]) {
+		Food obj = new Food();
+	}
+
+}

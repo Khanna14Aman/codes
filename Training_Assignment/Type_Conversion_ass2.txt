@@ -1,0 +1,9 @@
+class Tester {
+	public static void main(String[] args) {
+		int f1 = 32,f2 = 50;
+		double c1 = ((f1-32)/9)*5;
+		double c2 = ((f2-32)/9)*5;
+		System.out.println(c1);
+		System.out.println(c2);
+	}
+}

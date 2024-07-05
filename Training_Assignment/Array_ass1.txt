@@ -1,0 +1,45 @@
+class Teacher {
+    String teacherName;
+    String subject;
+    double salary;
+    public Teacher(String name,String _subject,double _salary){
+     teacherName = name;
+     subject = _subject;
+     salary = _salary;
+    }
+    public String getTeacherName(){
+     return teacherName;
+    }
+    public void setTeacherName(String name){
+     teacherName = name;
+    }
+    public String getSubject(){
+     return subject;
+    }
+    public void setSubject(String _subject){
+     subject = _subject;
+    }
+    public double getSalary(){
+     return salary;
+    }
+    public void setSalary(double _salary){
+     salary = _salary;
+    }
+    public void displayDetails(){
+     System.out.println("Name is : "+teacherName+" Subject : "+subject+" Salary : "+salary);
+    }
+}
+
+class Tester {
+	public static void main(String[] args) {
+	    // Implement your code here 
+         Teacher arr[] = new Teacher[4];
+         arr[0] = new Teacher("Alex","Java Fundamentals" , 1200);
+         arr[1] = new Teacher("John", "RDBMS", 800);
+         arr[2] = new Teacher("Sam", "Networking", 900);
+         arr[3] = new Teacher("Maria", "Python", 900);
+         for(int i=0;i<4;i++){
+          arr[i].displayDetails();
+         }
+	}
+}

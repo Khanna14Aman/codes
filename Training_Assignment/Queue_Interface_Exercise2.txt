@@ -1,0 +1,42 @@
+import java.util.Deque;
+import java.util.ArrayDeque;
+
+class Tester {
+    
+    public static Deque<Integer> changeSmallest(Deque<Integer> inputStack) {
+		Deque<Integer>ans = new ArrayDeque<>();
+		Deque<Integer>temp = new ArrayDeque<>();
+		int mini = Integer.MAX_VALUE;
+		for(Integer val:inputStack){
+			mini = Math.min(mini,val);
+		}
+		while(inputStack.peek()!=null){
+			if(inputStack.peek()==mini){
+				ans.push(inputStack.pop());
+			}
+			else{
+				temp.push(inputStack.pop());
+			}
+		}
+		while(temp.peek()!=null){
+			ans.push(temp.pop());
+		}
+		return ans;
+	}
+
+	public static void main(String[] args) {
+		
+		Deque<Integer> inputStack = new ArrayDeque<Integer>();
+		inputStack.push(1);
+		inputStack.push(8);
+		inputStack.push(51);
+		inputStack.push(122);
+		inputStack.push(5);
+	
+		Deque<Integer> updatedStack = changeSmallest(inputStack);
+		
+		System.out.println("Stack After Modification:");
+		for (Integer value : updatedStack)
+			System.out.println(value);
+	}
+}

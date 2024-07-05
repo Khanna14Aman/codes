@@ -1,0 +1,18 @@
+class Tester {
+	public static void main(String[] args) {
+		int a = 7,b = 2,c = 9;
+		if(a==7){
+		   System.out.print(b*c);
+		}
+		else if(b==7){
+		    System.out.print(c);
+		}
+		else if(c==7){
+		    System.out.print(-1);
+		}
+		else{
+		    System.out.print(a*b*c);
+		}
+	}
+}
+

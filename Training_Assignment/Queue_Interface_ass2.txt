@@ -1,0 +1,39 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+class Tester {
+
+    public static Deque<Character> updateStack(Deque<Character> inputStack) {
+		Deque<Character>st1 = new ArrayDeque<>();
+		Deque<Character>st2 = new ArrayDeque<>();
+		while(inputStack.size()>3){
+			st1.push(inputStack.pop());
+		}
+		while(inputStack.size()>0){
+			st2.push(inputStack.pop());
+		}
+		while(st1.size()>0){
+			inputStack.push(st1.pop());
+		}
+		while (st2.size()>0) {
+			inputStack.push(st2.pop());
+		}
+		return inputStack;
+	}
+	
+	public static void main(String[] args) {
+		
+		Deque<Character> inputStack = new ArrayDeque<Character>();
+		inputStack.push('E');
+		inputStack.push('D');
+		inputStack.push('C');
+		inputStack.push('B');
+		inputStack.push('A');
+		
+		Deque<Character> resultStack = updateStack(inputStack);
+		
+		System.out.println("The alphabets in updated stack are:");
+		for(Character alphabet: resultStack)
+		    System.out.println(alphabet);
+	}
+}
