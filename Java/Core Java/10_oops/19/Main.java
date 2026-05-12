@@ -8,7 +8,7 @@ public class Main{
             System.out.println(e);
         }
         finally{
-            System.out.println("This is finnnaly block");
+            System.out.println("This is finnnaly block"); // finally always gets executed in case of return statement as well.
         }
     }
     public static void main(String[] args) {
@@ -22,7 +22,7 @@ public class Main{
         //         break;
         //     }
         //     finally{
-        //         System.out.println("Here the value of b is "+b);
+        //         System.out.println("Here the value of b is "+b);  // finally always gets executed in case of break statement as well.
         //     }
         //     b--;
         // }
